@@ -1,0 +1,52 @@
+// out: Square.css, compress: true
+
+@import './vars.less';
+
+.square {
+	&.worm {
+		background-color: @worm-color;
+		&.n {
+			&.e { border-bottom-left-radius: @square-size; }
+			&.w { border-bottom-right-radius: @square-size; }
+		}
+		&.s {
+			&.e { border-top-left-radius: @square-size; }
+			&.w { border-top-right-radius: @square-size; }
+		}
+	}
+	&.head {
+		background-color: darken(@worm-color, 10%);
+		&.n {
+			border-radius: 0 0 @square-size @square-size;
+		}
+		&.s {
+			border-radius: @square-size @square-size 0 0;
+		}
+		&.w {
+			border-radius: 0 @square-size @square-size 0;
+		}
+		&.e {
+			border-radius: @square-size 0 0 @square-size;
+		}
+	}
+	&.tail {
+		background-color: lighten(@worm-color, 10%);
+		&.n {
+			border-radius: 0 0 @square-size @square-size;
+		}
+		&.s {
+			border-radius: @square-size @square-size 0 0;
+		}
+		&.w {
+			border-radius: 0 @square-size @square-size 0;
+		}
+		&.e {
+			border-radius: @square-size 0 0 @square-size;
+		}
+	}
+
+	&.head,.tail {
+		border-radius: @square-size;
+	}
+
+}

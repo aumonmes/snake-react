@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Square from './Square.jsx';
 
-import '../css/Board.css';
+//import '../css/Board.css';
 
 export default class Board extends Component {
 

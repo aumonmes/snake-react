@@ -2,9 +2,28 @@
 
 @import './vars.less';
 
+@north-shadow: 0 1px 0 0 darken(@worm-color, 10%) inset;
+@south-shadow: 0 -1px 0 0 darken(@worm-color, 10%) inset;
+@east-shadow: -1px 0 0 0 darken(@worm-color, 10%) inset;
+@west-shadow: 1px 0 0 0 darken(@worm-color, 10%) inset;
+
 .square {
+	// background-clip: content-box;
+	box-sizing: border-box;
+	// padding: @square-size / 6;
+
 	&.worm {
 		background-color: @worm-color;
+
+		// Shadows
+		&.n.s { box-shadow: @east-shadow, @west-shadow; }
+		&.w.e { box-shadow: @north-shadow, @south-shadow; }
+		&.n.e { box-shadow: @south-shadow, @west-shadow; }
+		&.n.w { box-shadow: @south-shadow, @east-shadow; }
+		&.s.e { box-shadow: @north-shadow, @west-shadow; }
+		&.s.w { box-shadow: @north-shadow, @east-shadow; }
+
+		// Corner radius
 		&.n {
 			&.e { border-bottom-left-radius: @square-size; }
 			&.w { border-bottom-right-radius: @square-size; }

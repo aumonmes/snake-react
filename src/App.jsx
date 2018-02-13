@@ -12,7 +12,7 @@ export default class App extends Component {
 		this.state = {
 			dead: false,
 			worm: new Worm(),
-			boardSize: [40, 20],
+			boardSize: [20, 20],
 			nextDirection: false,
 			mainLoop: false
 		}
@@ -94,7 +94,7 @@ export default class App extends Component {
 	startLoop() {
 		if(this.state.mainLoop) return;
 
-		const mainLoop = setInterval(() => this.move(), 200);
+		const mainLoop = setInterval(() => this.move(),2000);
 
 		this.setState({ mainLoop });
 	}
@@ -109,6 +109,8 @@ export default class App extends Component {
 	/** Main render **/
 	render() {
 		this.startLoop();
+		//this.move();
+		//this.move();
 
 		return this.state.dead ?
 			<div>Dead</div>
